@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #393e46;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    animation: rotate 2000ms ease infinite;
+}
+
+#left {
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 100px solid #00adb5;
+    transform-origin: right center;
+}
+
+#right {
+    border-bottom: 100px solid #00adb5;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    bottom: 0;
+    transform-origin: top center;
+    animation-delay: 500ms;
+}
+
+@keyframes rotate {
+    20%, 50% {
+        transform: rotate(180deg);
+    } 70%, 100% {
+        transform: rotate(360deg);
+    }
+}
